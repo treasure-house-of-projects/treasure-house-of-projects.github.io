@@ -1,0 +1,40 @@
+{
+    "APP": {
+        "WELCOME": "WELCOME BACK!",
+        "HAVEACCOUNT": "If you already have an account you can login here",
+        "LOGIN": "Login",
+        "REGISTRATION": "DON'T HAVE AN ACCOUNT?",
+        "CREATETEXT": "If you don't have an account you can create one here",
+        "CREATE": "Create your account"
+    },
+    "LOGIN": {
+        "TITLE": "LOGIN",
+        "LOGVIA": "Log into your account via",
+        "FILLFORM": "or fill in the form",
+        "EMAILLABEL": "Enter email",
+        "PASSWORDEMAIL": "Enter password",
+        "FORGOTPASSWORD": "Forgot password?",
+        "KEEPSIGNT": "Keep me signed",
+        "LOGIN": "Login",
+        "ERROREMAIL": "Check correctness of your email address!",
+        "EMAILREQUIRED": "Email cannot be empty",
+        "ERRORPASSWORD": "Password cannot be empty"
+    },
+    "REGISTRATION": {
+        "TITLE": "CREATE AN ACCOUNT",
+        "CREATEACCOUNT": "Create an account via",
+        "NAMELABEL": "Enter name",
+        "SURENAMELABEL": "Enter surename",
+        "CONFIRMPASSWORD": "Confirm password",
+        "CREATE": "Create account",
+        "EQUALPASSWORD": "Passwords do not match",
+        "WRONGPASSWORD": "Check the password!",
+        "SURNAMEREQUIRED": "Surename cannot be empty",
+        "NAMEREQUIRED": "Name cannot be empty",
+        "PASSWORDDETALS": "<ul>Password must consist: <li>at least 2 uppercase Latin letters</li> <li>a minimum of 2 lowercase Latin letters</li> <li>a minimum of 1 special characters</li></ul><div class='confirm'>OK</div>"
+    },
+    "RESETPASSWORD": {
+        "FORGOT": "Change password",
+        "RESET": "Reset password"
+    }
+}

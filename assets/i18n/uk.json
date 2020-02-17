@@ -1,0 +1,40 @@
+{
+    "APP": {
+        "WELCOME": "Привіт!",
+        "HAVEACCOUNT": "Якщо ви зареєстровані, увійдіть тут",
+        "LOGIN": "Увійти",
+        "REGISTRATION": "НЕМАЄ АККАУНТА?",
+        "CREATETEXT": "якщо у вас не має аккаунта, ви можете зареєструватись тут",
+        "CREATE": "Створити аккаунт"
+    },
+    "LOGIN": {
+        "TITLE": "УВІЙТИ",
+        "LOGVIA": "Увійти за домпомогою",
+        "FILLFORM": "або заповніть форму",
+        "EMAILLABEL": "Уведіть email",
+        "PASSWORDEMAIL": "Уведіть пароль",
+        "FORGOTPASSWORD": "Забули пароль?",
+        "KEEPSIGNT": "Запамятати мене",
+        "LOGIN": "Увійти",
+        "ERROREMAIL": "Перевірте правильніть email",
+        "EMAILREQUIRED": "Email не може бути пустим",
+        "ERRORPASSWORD": "Password не може бути пустим"
+    },
+    "REGISTRATION": {
+        "TITLE": "СТВОРИТИ АККАУНТ",
+        "CREATEACCOUNT": "Створити акаунт за допомогою",
+        "NAMELABEL": "Уведіть ім'я",
+        "SURENAMELABEL": "Уведіть прізвище",
+        "CONFIRMPASSWORD": "Введіть пароль повторно",
+        "CREATE": "Створити аккаунт",
+        "EQUALPASSWORD": "Пароли не співпадають",
+        "WRONGPASSWORD": "Пароль не відповідають вимогам системы",
+        "SURNAMEREQUIRED": "Прізвище не може бути пустим",
+        "NAMEREQUIRED": "Ім'я не може бути пустим",
+        "PASSWORDDETALS": "<ul>Пароль повинен складатися: <li>не меньше ніж 2 великих літери</li> <li>не меньше ніж 2 маленьких літери</li> <li>не меньше ніж 1 спецсимвол</li> <li>літинський алфавіт</li></ul><div class='confirm'>ОК</div>"
+    },
+    "RESETPASSWORD": {
+        "FORGOT": "Забули пароль?",
+        "RESET": "Відновити"
+    }
+}

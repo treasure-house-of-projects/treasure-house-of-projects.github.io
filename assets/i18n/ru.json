@@ -1,0 +1,40 @@
+{
+    "APP": {
+        "WELCOME": "Привет!",
+        "HAVEACCOUNT": "Если у вас есть аккаунт, войдите здесь",
+        "LOGIN": "Войти",
+        "REGISTRATION": "НЕТ АККАУНТА?",
+        "CREATETEXT": "Если у вас нет аккаунта, создайте его здесь",
+        "CREATE": "Создать аккаунт"
+    },
+    "LOGIN": {
+        "TITLE": "ВОЙТИ",
+        "LOGVIA": "Войдите используя социальные сети",
+        "FILLFORM": "или заполните форму",
+        "EMAILLABEL": "ВВедите email",
+        "PASSWORDEMAIL": "Введите пароль",
+        "FORGOTPASSWORD": "Забыли пароль?",
+        "KEEPSIGNT": "Запомнить меня",
+        "LOGIN": "Войти",
+        "ERROREMAIL": "Проверьте правильность email",
+        "EMAILREQUIRED": "Email не может быть пустым",
+        "ERRORPASSWORD": "Пароль не может быть пустым"
+    },
+    "REGISTRATION": {
+        "TITLE": "СОЗДАТЬ АККАУНТ",
+        "CREATEACCOUNT": "Создать аккаунт с помошью",
+        "NAMELABEL": "Введите имя",
+        "SURENAMELABEL": "Введите фамилию",
+        "CONFIRMPASSWORD": "Введите пароль повторно",
+        "CREATE": "Создать аккаунт",
+        "EQUALPASSWORD": "Пароли не совпадают",
+        "WRONGPASSWORD": "Пароль не соответствует требованиям системы",
+        "SURNAMEREQUIRED": "Фамилия не может быть пустой",
+        "NAMEREQUIRED": "Имя не может быть пустым",
+        "PASSWORDDETALS": "<ul>Пароль должен содержать: <li>не меньше 2 заглавных буквы</li> <li>не меньше 2 прописных буквы</li> <li>не меньше 1 спецсимвола</li> <li>буквы латиницы</li></ul><div class='confirm'>ОК</div>"
+    },
+    "RESETPASSWORD": {
+        "FORGOT": "Забыли пароль?",
+        "RESET": "Востановить"
+    }
+}
