@@ -63,15 +63,50 @@
     },
     "COURSE": {
         "ABOUT": "About Course",
-        "INFO" : "More information you can find here:",
+        "INFO": "More information you can find here:",
         "APPLY": "Apply",
         "CANCEL": "Cancel",
         "QUESTION": "Do you want to apply to this Course?",
-        "THANKS":"Thank you!",
+        "THANKS": "Thank you!",
         "ACCEPTREQUEST": "Now your request is waiting for operator to accept it. You will be notified soon."
     },
     "NOTIFICATION": {
-        "NEW":"New notification",
-        "OLD":"Old Notification"
+        "NEW": "New notification",
+        "OLD": "Old Notification"
+    },
+    "OPERATORCOURSES": {
+        "SERCH": "Serch",
+        "ADD": "Add New Course",
+        "NOONE": "No one mentor assign",
+        "DELETE": "Delete",
+        "EDIT": "Edit Course"
+    },
+    "CHANGECOURSES": {
+        "DELETE": "Delete Course",
+        "MENTORS": "Mentors",
+        "ADDMENTOR": "Add Mentor",
+        "PRICE": "Price Now",
+        "NOPRICE": "Price is not defined",
+        "HISTORY": "Price history",
+        "CHANGEPRICE": "Change Price",
+        "DESCRIPTION": "Description",
+        "CHANGEDE": "Change Description",
+        "CLOSE": "Close",
+        "REMOVE": "Remove",
+        "ADD": "Add",
+        "ONCOURSE": "Mentors on course",
+        "AVAILABLE": "Available mentors",
+        "SERCHM": "Serch mentor",
+        "DATE": "Date",
+        "PRICEVALUE": "Price",
+        "NOHISTORY": "You don`t have a history",
+        "ADDPRICE": "Add new price",
+        "CHANGE": "Change"
+    },
+    "CREATECOURSE": {
+        "TITLE": "Enter course title",
+        "DESCRIPTION": "Enter course description",
+        "DAY": "Set number of test days",
+        "CREATE": "Create Course"
     }
 }
