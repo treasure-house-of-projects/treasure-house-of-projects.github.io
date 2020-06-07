@@ -36,5 +36,42 @@
     "RESETPASSWORD": {
         "FORGOT": "Change password",
         "RESET": "Reset password"
+    },
+    "PROFILE": {
+        "CHANGE": "Change",
+        "DELETE": "Delete",
+        "LOGOUT": "Logout",
+        "PHONE": "Phone number",
+        "EDIT": "Edit",
+        "PASSWORD": "Password",
+        "CHANGEP": "Change Password",
+        "LANGUAGE": "Interface language",
+        "CHANGEPASSWORD": "Please, change your password",
+        "OLDPASSWORD": "Enter old Password",
+        "NEWPASSWORD": "Create new password",
+        "CONFIRMPASSWORD": "Confirm new password",
+        "CANCEL": "Cancel",
+        "SAVE": "Save",
+        "CONFIRMLOGOUT": "Please, confirm your desicion",
+        "STAYSIGNED": "Stay signed in",
+        "EMAIL": "Email",
+        "AT": "at"
+    },
+    "STUDENTCOURSE": {
+        "SERCH": "Serch",
+        "READMORE": "Read More"
+    },
+    "COURSE": {
+        "ABOUT": "About Course",
+        "INFO" : "More information you can find here:",
+        "APPLY": "Apply",
+        "CANCEL": "Cancel",
+        "QUESTION": "Do you want to apply to this Course?",
+        "THANKS":"Thank you!",
+        "ACCEPTREQUEST": "Now your request is waiting for operator to accept it. You will be notified soon."
+    },
+    "NOTIFICATION": {
+        "NEW":"New notification",
+        "OLD":"Old Notification"
     }
 }
