@@ -108,5 +108,28 @@
         "DESCRIPTION": "Enter course description",
         "DAY": "Set number of test days",
         "CREATE": "Create Course"
+    },
+    "STUDENTCONTRACT":{
+        "MENTORING":"mentoring",
+        "STARTDATE":"Start course date",
+        "MENTOR":"Mentor",
+        "PAYMENT":"Monthly payment",
+        "TRIAL":"Trial",
+        "COURSESTATUS":"Course Status",
+        "FREEZPERIOD":"Freeze period",
+        "PAYMENTHISTORY":"Payment history",
+        "DATE":"date",
+        "AMOUNT":"amount",
+        "STATUS":"status",
+        "PAY":"Pay",
+        "FREEZE":"Freeze",
+        "CLOSECONTRACT":"Close contract",
+        "SELECT":"Select Your freeze period",
+        "START":"Start",
+        "END":"End",
+        "CANCEL":"Cancel",
+        "CONFIRM":"Confirm",
+        "SEND":"Youre request send!",
+        "CLOSE":"Close"
     }
 }
