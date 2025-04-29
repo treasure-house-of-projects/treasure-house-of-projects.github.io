@@ -1,11 +1,106 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<title>🚧 We’re working on something great</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex">
-<style>
- body{display:flex;min-height:100vh;margin:0;justify-content:center;align-items:center;font:1.2rem system-ui;background:#fafafa}
- h1{font-size:2.6rem;margin:.2em}
-</style>
-<h1>Site under construction—check back soon!</h1>
+<head>
+  <!---- Meta & basic hygiene -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Coming Soon • Your Site</title>
+
+  <!---- Google Font & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- base palette ---------- */
+    :root{
+      --bg-from:#4f46e5;          /* indigo-600 */
+      --bg-to:#9333ea;            /* purple-600 */
+      --card-bg:rgba(255,255,255,.12);
+      --card-blur:8px;
+      --text:#ffffff;
+      --accent:#fff700;           /* subtle yellow pop */
+    }
+
+    /* ---------- page reset ---------- */
+    *{box-sizing:border-box;margin:0}
+    html,body{height:100%}
+    body{
+      font-family:"Poppins",system-ui,sans-serif;
+      color:var(--text);
+      display:flex;justify-content:center;align-items:center;
+      background:linear-gradient(135deg,var(--bg-from),var(--bg-to));
+      animation:bgShift 12s ease-in-out infinite alternate;
+    }
+
+    /* ---------- animated background ---------- */
+    @keyframes bgShift{
+      0%{background-position:0% 50%}
+      100%{background-position:100% 50%}
+    }
+
+    /* ---------- glassy card ---------- */
+    main{
+      text-align:center;
+      padding:3rem clamp(2rem,4vw,4rem);
+      border-radius:1.4rem;
+      backdrop-filter:blur(var(--card-blur));
+      background:var(--card-bg);
+      box-shadow:0 6px 20px rgba(0,0,0,.25);
+      max-width:35rem;
+    }
+
+    h1{
+      font-size:clamp(2.4rem,6vw,3.5rem);
+      font-weight:600;
+      line-height:1.1;
+    }
+    p{margin-top:1.2rem;font-size:1.1rem;opacity:.9}
+
+    /* ---------- subtle accent underline ---------- */
+    .accent{
+      position:relative;display:inline-block;
+    }
+    .accent::after{
+      content:"";
+      position:absolute;left:0;right:0;bottom:-.3em;height:.35em;
+      background:var(--accent);opacity:.8;z-index:-1;
+      transform:skewX(-8deg);
+    }
+
+    /* ---------- email form (optional) ---------- */
+    form{
+      margin-top:2rem;display:flex;gap:.6rem;justify-content:center;
+      flex-wrap:wrap;
+    }
+    input,button{
+      font:inherit;border:none;border-radius:.5rem;padding:.8rem 1.1rem;
+    }
+    input{
+      min-width:14rem;flex:1 1 220px;
+      background:rgba(255,255,255,.2);color:#fff;
+    }
+    input::placeholder{color:#f0f0f0}
+    button{
+      background:#1e1b4b;color:#fff;font-weight:600;cursor:pointer;
+      transition:.2s transform;
+    }
+    button:hover{transform:translateY(-2px)}
+  </style>
+</head>
+<body>
+
+<main>
+  <h1><span class="accent">Something big</span> is coming soon</h1>
+  <p>We’re crafting the experience right now. Leave your email and be first to know when we launch!</p>
+
+  <!-- Delete this form if you don’t plan to wire it up yet -->
+  <form action="https://formspree.io/f/your-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required>
+      <button type="submit">Notify Me</button>
+  </form>
+</main>
+
+</body>
+</html>
