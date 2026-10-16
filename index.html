@@ -1,147 +1,378 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Treasure House of Projects • Coming Soon</title>
+  <title>Скарбниця проектів — громадська організація</title>
+  <meta name="description" content="Громадська організація «Скарбниця проектів» з Києва. Реалізуємо проєкти у сфері культури, освіти, здоров'я та інформаційних технологій.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://skarb.ngo/">
+  <meta property="og:title" content="Скарбниця проектів">
+  <meta property="og:description" content="Громадська організація з Києва. Реалізуємо проєкти у сфері культури, освіти, здоров'я та інформаційних технологій.">
+  <meta name="theme-color" content="#0f3a38">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 70'%3E%3Crect width='120' height='70' rx='14' fill='%230f3a38'/%3E%3Cpath d='M60 6 L67.6 23.5 L88.5 24.7 L72.4 38 L77.6 58.3 L60 47 L42.4 58.3 L47.6 38 L31.5 24.7 L52.4 23.5Z' fill='none' stroke='%23e3c46b' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
 
-  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* ---- colour palette ---- */
     :root{
-      --bg-from:#2563eb;      /* blue-600 */
-      --bg-to:#7c3aed;        /* violet-600 */
-      --card-bg:rgba(255,255,255,.12);
-      --card-blur:10px;
-      --text:#ffffff;
-      --accent:#ffeb3b;
+      --ink:#0f3a38;          /* pine teal: text, dark sections */
+      --ink-soft:#3d5f5c;     /* secondary text on light */
+      --mint:#ddede7;         /* brand ground, from the cover */
+      --paper:#f4f9f7;        /* lightest surface */
+      --gold:#d4af4a;         /* decorative strokes only */
+      --gold-lit:#e3c46b;     /* gold text on ink */
+      --gold-deep:#7d5f12;    /* gold text on light grounds */
+      --line:rgba(15,58,56,.16);
+      --display:"Unbounded",system-ui,sans-serif;
+      --text:"Golos Text",system-ui,sans-serif;
+      --wrap:72rem;
+      --gutter:clamp(1rem,4vw,2.5rem);
     }
 
-    /* ---- global reset ---- */
-    *,::before,::after{box-sizing:border-box;margin:0}
-    html,body{height:100%}
-    body{
-      font-family:"Poppins",system-ui,sans-serif;
-      color:var(--text);
-      display:flex;justify-content:center;align-items:center;
-      background:linear-gradient(135deg,var(--bg-from),var(--bg-to));
-      background-size:200% 200%;
-      animation:bgShift 15s ease-in-out infinite alternate;
-      padding:1rem;
-    }
-    @keyframes bgShift{0%{background-position:0 50%}100%{background-position:100% 50%}}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--text);overflow-x:hidden}
+    h1,h2,h3,p,dl,dd,ul{margin:0}
+    ul{padding:0;list-style:none}
+    a{color:inherit}
+    :focus-visible{outline:3px solid var(--gold-deep);outline-offset:3px;border-radius:4px}
+    .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+    .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:.6rem 1rem;z-index:10}
+    .skip:focus{left:1rem}
 
-    /* ---- card ---- */
-    main{
-      text-align:center;
-      padding:clamp(2rem,5vw,3rem) clamp(1.2rem,5vw,4rem);
-      border-radius:1.5rem;
-      backdrop-filter:blur(var(--card-blur));
-      background:var(--card-bg);
-      box-shadow:0 8px 28px rgba(0,0,0,.25);
-      width:100%;
-      max-width:48rem;
+    /* ---------- header ---------- */
+    .top{position:absolute;inset:0 0 auto;z-index:3}
+    .top .wrap{display:flex;align-items:center;gap:1.5rem;height:4.5rem}
+    .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:700 .95rem/1 var(--display)}
+    .brand svg{width:2.4rem;height:auto}
+    .nav{display:flex;gap:1.6rem;margin-left:auto;font-weight:500}
+    .nav a{text-decoration:none;padding:.25rem 0;border-bottom:2px solid transparent}
+    .nav a:hover{border-color:var(--gold)}
+    .lang{font:600 .85rem/1 var(--text);background:none;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:.5rem .85rem;cursor:pointer}
+    .lang:hover{background:var(--ink);color:var(--paper)}
+
+    /* ---------- hero ---------- */
+    .hero{position:relative;background:radial-gradient(120% 90% at 70% 0%,#eef7f3 0%,var(--mint) 55%,#cfe4dc 100%);overflow:hidden;padding:9rem 0 6rem;isolation:isolate}
+    .ribbon{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+    .ribbon path{fill:none;stroke-linecap:round}
+    .crown{width:clamp(5.5rem,11vw,8.5rem);height:auto;display:block;margin-bottom:1.75rem}
+    .crown path{fill:none;stroke:var(--gold);stroke-width:3.2;stroke-linejoin:round}
+    .hero h1{font:800 clamp(2.5rem,9.2vw,7.4rem)/.94 var(--display);letter-spacing:-.025em;max-width:11ch}
+    .hero h1 span{display:block}
+    .hero h1 .l2{color:var(--ink);-webkit-text-stroke:0;padding-left:clamp(0rem,6vw,5rem)}
+    .lead{margin-top:2rem;max-width:34rem;font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.5;color:var(--ink-soft)}
+    .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.25rem}
+    .btn{display:inline-flex;align-items:center;gap:.55rem;font:600 1rem/1 var(--text);text-decoration:none;padding:1rem 1.4rem;border-radius:999px;border:1.5px solid var(--ink);transition:background-color .2s,color .2s}
+    .btn-solid{background:var(--ink);color:var(--paper)}
+    .btn-solid:hover{background:#082826}
+    .btn-line:hover{background:var(--ink);color:var(--paper)}
+    .btn svg{width:1.1rem;height:1.1rem;flex:none}
+
+    @media (prefers-reduced-motion:no-preference){
+      .ribbon .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s cubic-bezier(.6,.05,.25,1) .2s forwards}
+      .ribbon .draw.late{animation-delay:.55s}
+      .crown path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s ease-out forwards}
+      .crown path:nth-child(2){animation-delay:.9s}
+      .crown path:nth-child(3){animation-delay:1.05s}
+      .crown path:nth-child(1){animation-delay:1.2s}
+      @keyframes draw{to{stroke-dashoffset:0}}
     }
 
-    /* ---- typography ---- */
-    h1{
-      font-size:clamp(2.2rem,6vw,3.4rem);
-      font-weight:600;
-      line-height:1.15;
-    }
-    .accent{position:relative;display:inline-block}
-    .accent::after{
-      content:"";position:absolute;left:0;right:0;bottom:-.25em;height:.35em;
-      background:var(--accent);opacity:.8;transform:skewX(-8deg);z-index:-1;
-    }
-    p{margin-top:1rem;font-size:1.1rem}
+    /* ---------- sections ---------- */
+    section{scroll-margin-top:1rem}
+    .block{padding:clamp(4.5rem,9vw,7.5rem) 0}
+    .h2{font:700 clamp(1.75rem,3.6vw,2.75rem)/1.12 var(--display);letter-spacing:-.015em;max-width:22ch}
+    .intro{margin-top:1rem;max-width:38rem;color:var(--ink-soft);font-size:1.125rem}
 
-    section{margin-top:2rem;text-align:left;font-size:1.05rem;line-height:1.55}
-    section h2{font-size:1.35rem;margin-bottom:.5rem;font-weight:600}
-    ul{margin:.3rem 0 .9rem 1.1rem;display:grid;gap:.3rem}
-    li{list-style:disc}
+    /* about */
+    .about .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+    .about-text p+p{margin-top:1.1rem}
+    .about-text p{max-width:36rem}
+    .facts{margin-top:2.5rem;border-top:1px solid var(--line)}
+    .facts div{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;padding:.95rem 0;border-bottom:1px solid var(--line)}
+    .facts dt{color:var(--ink-soft);font-size:.95rem}
+    .facts dd{font-weight:500}
 
-    /* ---- signup form ---- */
-    form{margin-top:2rem;display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
-    input,button{font:inherit;border:none;border-radius:.55rem;padding:.9rem 1rem}
-    input{
-      flex:1 1 240px;max-width:400px;
-      background:rgba(255,255,255,.25);color:#fff
+    /* directions */
+    .dirs{background:var(--mint)}
+    .dir-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.75rem clamp(1.5rem,4vw,3.5rem);margin-top:3.25rem}
+    .dir-list li{display:grid;grid-template-columns:1.6rem 1fr;gap:.9rem;align-items:start}
+    .dir-list svg{width:1.6rem;height:1.6rem;margin-top:.1rem}
+    .dir-list svg path{fill:none;stroke:var(--gold-deep);stroke-width:5;stroke-linejoin:round}
+    .dir-list h3{font:700 1.05rem/1.3 var(--display);margin-bottom:.4rem}
+    .dir-list p{color:var(--ink-soft);font-size:1rem}
+
+    /* projects: the vault */
+    .vault{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+    .vault .h2{color:var(--paper)}
+    .vault .intro{color:#b9d3cc}
+    .posters{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(13rem,auto);gap:1rem;margin-top:3.25rem}
+    .poster{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem;padding:1.6rem;border:1px solid rgba(227,196,107,.35);border-radius:3px;background:rgba(255,255,255,.025)}
+    .poster .tag{font-size:.9rem;color:var(--gold-lit);font-weight:500}
+    .poster h3{font:700 clamp(1.4rem,2.3vw,1.9rem)/1.08 var(--display);letter-spacing:-.01em}
+    .poster p{color:#c7ddd7;font-size:1rem;max-width:30rem;margin-top:.6rem}
+    .p-piano{grid-column:span 4;grid-row:span 2;background:radial-gradient(90% 120% at 100% 100%,rgba(212,175,74,.22),transparent 60%),rgba(255,255,255,.03)}
+    .p-piano h3{font-size:clamp(2.2rem,5.4vw,4.4rem);line-height:.98;max-width:9ch}
+    .p-piano .keys{position:absolute;right:1.6rem;top:1.6rem;display:flex;gap:3px;opacity:.9}
+    .p-piano .keys i{width:.6rem;height:2.6rem;border:1px solid var(--gold);border-radius:0 0 2px 2px}
+    .p-piano .keys i:nth-child(2n){background:var(--gold);height:1.7rem}
+    .p-street{grid-column:span 2;grid-row:span 2}
+    .p-street h3{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+    .p-yujin,.p-latusho{grid-column:span 2}
+    .p-skarb{grid-column:span 2;border-style:dashed}
+    .badge{align-self:flex-start;font-size:.85rem;font-weight:600;color:var(--ink);background:var(--gold-lit);border-radius:999px;padding:.3rem .7rem}
+
+    /* join */
+    .join .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(2rem,6vw,5rem)}
+    .ways{border-top:1px solid var(--line)}
+    .ways li{padding:1.5rem 0;border-bottom:1px solid var(--line)}
+    .ways h3{font:700 1.15rem/1.3 var(--display);margin-bottom:.45rem}
+    .ways p{color:var(--ink-soft)}
+    .join .actions{margin-top:2.25rem}
+
+    /* footer */
+    .foot{background:var(--ink);color:#c7ddd7;padding:3rem 0;font-size:.95rem}
+    .foot .wrap{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:flex-end;justify-content:space-between}
+    .foot .brand{color:var(--paper);font-size:1.05rem}
+    .foot .brand svg path{stroke:var(--gold-lit)}
+    .foot p{margin-top:.6rem}
+    .foot a{color:var(--gold-lit);text-underline-offset:3px}
+
+    /* ---------- responsive ---------- */
+    @media (max-width:900px){
+      .about .wrap,.join .wrap{grid-template-columns:1fr}
+      .dir-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .posters{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .p-piano{grid-column:span 2;grid-row:auto;min-height:20rem}
+      .p-street{grid-column:span 2;grid-row:auto}
+      .p-yujin,.p-latusho,.p-skarb{grid-column:span 1}
     }
-    input::placeholder{color:#f0f0f0}
-    button{
-      background:#1e1b4b;color:#fff;font-weight:600;cursor:pointer;transition:.25s;
-      flex:0 0 auto
+    @media (max-width:720px){
+      .nav{display:none}
+      .lang{margin-left:auto}
     }
-    button:hover{transform:translateY(-2px)}
-
-    /* ---- mobile tweaks & short copy ---- */
-    @media (max-width:480px){
-      h1{font-size:clamp(1.9rem,8vw,2.4rem)}
-      section h2{font-size:1.2rem}
-      main{padding:1.8rem 1.2rem}
-
-      form{flex-direction:column;align-items:stretch}
-      button{width:100%}
-
-      .full{display:none}
-      .mini{display:block}
-    }
-    @media (min-width:481px){
-      .mini{display:none}
+    @media (max-width:560px){
+      .hero{padding:7rem 0 4.5rem}
+      .dir-list{grid-template-columns:1fr;gap:2rem}
+      .posters{grid-template-columns:1fr}
+      .p-piano,.p-street,.p-yujin,.p-latusho,.p-skarb{grid-column:auto}
+      .p-piano{min-height:17rem}
+      .facts div{grid-template-columns:1fr;gap:.15rem}
+      .btn{width:100%;justify-content:center}
     }
   </style>
 </head>
 <body>
-<main>
-  <h1><span class="accent">Treasure House of Projects</span><br>is getting ready</h1>
-  <p>We’re polishing the final touches. Be the first to know when we launch!</p>
+<a class="skip" href="#main" data-i18n="skip">Перейти до змісту</a>
 
-  <section>
-    <!-- ================= Who we are ================ -->
-    <h2>Who we are</h2>
-    <p class="full"><strong>Treasure House of Projects (NGO)</strong> unlocks creative potential across society. We work in charity, volunteering, health, culture, art, youth initiatives, education and social protection.</p>
-    <p class="mini"><strong>Treasure House of Projects</strong> sparks creativity via charity, culture, youth &amp; social programmes.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Скарбниця проектів" data-i18n-aria="brandAria">
+      <svg viewBox="0 0 120 70" aria-hidden="true"><path d="M60 4L67.6 23.5L88.5 24.7L72.4 38L77.6 58.3L60 47L42.4 58.3L47.6 38L31.5 24.7L52.4 23.5Z" fill="none" stroke="#7d5f12" stroke-width="5" stroke-linejoin="round"/><path d="M24 29L29 41.1L42.1 42.1L32.1 50.6L35.2 63.4L24 56.5L12.8 63.4L15.9 50.6L5.9 42.1L19 41.1Z" fill="none" stroke="#7d5f12" stroke-width="5" stroke-linejoin="round"/><path d="M96 29L101 41.1L114.1 42.1L104.1 50.6L107.2 63.4L96 56.5L84.8 63.4L87.9 50.6L77.9 42.1L91 41.1Z" fill="none" stroke="#7d5f12" stroke-width="5" stroke-linejoin="round"/></svg>
+      <span data-i18n="short">Скарбниця</span>
+    </a>
+    <nav class="nav" aria-label="Розділи" data-i18n-aria="navAria">
+      <a href="#about" data-i18n="navAbout">Про нас</a>
+      <a href="#directions" data-i18n="navDirs">Напрями</a>
+      <a href="#projects" data-i18n="navProjects">Проєкти</a>
+      <a href="#join" data-i18n="navJoin">Долучитися</a>
+    </nav>
+    <button class="lang" type="button" id="lang" aria-label="Switch to English">EN</button>
+  </div>
+</header>
 
-    <!-- ================= Main activities ================ -->
-    <h2>Main activities</h2>
-    <ul class="full">
-      <li>Information &amp; awareness programmes</li>
-      <li>Advocacy and rights protection</li>
-      <li>Fund-raising for social impact</li>
-      <li>Training and capacity-building</li>
-      <li>Events, festivals and community gatherings</li>
-      <li>Educational outreach &amp; enlightenment</li>
-    </ul>
-    <ul class="mini">
-      <li>Info &amp; advocacy</li>
-      <li>Fund-raising</li>
-      <li>Training</li>
-      <li>Events</li>
-      <li>Outreach</li>
-    </ul>
-
-    <!-- ================= Flagship projects ================ -->
-    <h2>Flagship projects</h2>
-    <ul class="full">
-      <li><strong>“Latusho” Book Club</strong> – uniting book enthusiasts of every age</li>
-      <li><strong>“Yujin Fest”</strong> – yearly festival promoting healthy lifestyles</li>
-      <li><strong>“Street Music Fest”</strong> – discover tomorrow’s headline musicians</li>
-      <li><strong>Skarb NGO platform</strong> – matching nonprofits with IT volunteers</li>
-    </ul>
-    <ul class="mini">
-      <li>Book Club “Latusho”</li>
-      <li>Yujin Fest</li>
-      <li>Street Music Fest</li>
-      <li>Skarb NGO IT-volunteers</li>
-    </ul>
+<main id="main">
+  <section class="hero" id="top">
+    <svg class="ribbon" viewBox="0 0 1440 760" preserveAspectRatio="none" aria-hidden="true">
+      <path class="draw" pathLength="1" d="M-40 150 C 300 40, 700 30, 1000 140 S 1380 420, 1500 560" stroke="#d4af4a" stroke-width="14"/>
+      <path class="draw late" pathLength="1" d="M-40 182 C 320 78, 700 70, 990 176 S 1360 450, 1500 600" stroke="#ecd38b" stroke-width="4"/>
+    </svg>
+    <div class="wrap">
+      <svg class="crown" viewBox="0 0 120 70" aria-hidden="true">
+        <path pathLength="1" d="M60 4L67.6 23.5L88.5 24.7L72.4 38L77.6 58.3L60 47L42.4 58.3L47.6 38L31.5 24.7L52.4 23.5Z"/>
+        <path pathLength="1" d="M24 29L29 41.1L42.1 42.1L32.1 50.6L35.2 63.4L24 56.5L12.8 63.4L15.9 50.6L5.9 42.1L19 41.1Z"/>
+        <path pathLength="1" d="M96 29L101 41.1L114.1 42.1L104.1 50.6L107.2 63.4L96 56.5L84.8 63.4L87.9 50.6L77.9 42.1L91 41.1Z"/>
+      </svg>
+      <h1><span data-i18n="h1a">Скарбниця</span><span class="l2" data-i18n="h1b">проектів</span></h1>
+      <p class="lead" data-i18n="lead">Громадська організація з Києва. Допомагаємо ідеям ставати проєктами — у культурі, освіті, здоров'ї та інформаційних технологіях.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="#projects" data-i18n="ctaProjects">Переглянути проєкти</a>
+        <a class="btn btn-line" href="https://www.facebook.com/skarb.ngo" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg>
+          <span data-i18n="ctaFb">Ми у Facebook</span>
+        </a>
+      </div>
+    </div>
   </section>
 
+  <section class="block about" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <h2 class="h2" id="about-h" data-i18n="aboutH">Підтримуємо громадські ініціативи, що змінюють життя довкола</h2>
+      <div class="about-text">
+        <p data-i18n="aboutP1">«Скарбниця проектів» — неприбуткова громадська організація, створена 2017 року в Києві. Ми координуємо й підтримуємо прогресивні ініціативи, заходи та події: допомагаємо знайти команду, партнерів і ресурси, щоб корисна ідея стала фестивалем, клубом чи сервісом.</p>
+        <p data-i18n="aboutP2">Наша мета — захищати соціальні, творчі, освітні й інформаційно-технологічні інтереси людей різного віку, сприяти розвитку української культури та соціальної відповідальності.</p>
+        <dl class="facts">
+          <div><dt data-i18n="fFoundedT">Заснована</dt><dd data-i18n="fFounded">2017 рік, Київ</dd></div>
+          <div><dt data-i18n="fStatusT">Статус</dt><dd data-i18n="fStatus">Неприбуткова громадська організація</dd></div>
+          <div><dt data-i18n="fGeoT">Діємо</dt><dd data-i18n="fGeo">По всій Україні</dd></div>
+          <div><dt data-i18n="fNameT">Англійською</dt><dd data-i18n="fName">Treasure house of projects (THP)</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="block dirs" id="directions" aria-labelledby="dirs-h">
+    <div class="wrap">
+      <h2 class="h2" id="dirs-h" data-i18n="dirsH">Напрями діяльності</h2>
+      <p class="intro" data-i18n="dirsIntro">Шість напрямів зі статуту організації. Кожен проєкт, який ми беремо, лежить хоча б в одному з них.</p>
+      <ul class="dir-list">
+        <li><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M60 4L67.6 23.5L88.5 24.7L72.4 38L77.6 58.3L60 47L42.4 58.3L47.6 38L31.5 24.7L52.4 23.5Z"/></svg>
+          <div><h3 data-i18n="d1h">Фестивалі та події</h3><p data-i18n="d1p">Конкурси, змагання й фестивалі, що популяризують здоровий спосіб життя та культурні цінності.</p></div></li>
+        <li><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M60 4L67.6 23.5L88.5 24.7L72.4 38L77.6 58.3L60 47L42.4 58.3L47.6 38L31.5 24.7L52.4 23.5Z"/></svg>
+          <div><h3 data-i18n="d2h">Культура і просвіта</h3><p data-i18n="d2p">Розвиток культурного фонду України, видання книжок і поширення культурно-освітніх знань.</p></div></li>
+        <li><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M60 4L67.6 23.5L88.5 24.7L72.4 38L77.6 58.3L60 47L42.4 58.3L47.6 38L31.5 24.7L52.4 23.5Z"/></svg>
+          <div><h3 data-i18n="d3h">Навчання</h3><p data-i18n="d3p">Курси, семінари й школи, які допомагають підвищувати кваліфікацію та адаптуватися до нових умов.</p></div></li>
+        <li><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M60 4L67.6 23.5L88.5 24.7L72.4 38L77.6 58.3L60 47L42.4 58.3L47.6 38L31.5 24.7L52.4 23.5Z"/></svg>
+          <div><h3 data-i18n="d4h">Здоров'я</h3><p data-i18n="d4p">Підтримка програм і досліджень фізичного та психологічного здоров'я в Україні й за її межами.</p></div></li>
+        <li><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M60 4L67.6 23.5L88.5 24.7L72.4 38L77.6 58.3L60 47L42.4 58.3L47.6 38L31.5 24.7L52.4 23.5Z"/></svg>
+          <div><h3 data-i18n="d5h">Наука та ІТ</h3><p data-i18n="d5p">Сприяння розвитку науки, освіти й інформаційних технологій, науково-освітні програми.</p></div></li>
+        <li><svg viewBox="0 0 120 70" aria-hidden="true"><path d="M60 4L67.6 23.5L88.5 24.7L72.4 38L77.6 58.3L60 47L42.4 58.3L47.6 38L31.5 24.7L52.4 23.5Z"/></svg>
+          <div><h3 data-i18n="d6h">Партнерства</h3><p data-i18n="d6p">Співпраця з бізнесом, громадськими організаціями та владою, щоб разом розв'язувати проблеми громадян.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block vault" id="projects" aria-labelledby="proj-h">
+    <div class="wrap">
+      <h2 class="h2" id="proj-h" data-i18n="projH">Проєкти</h2>
+      <p class="intro" data-i18n="projIntro">Музика, книжки, здоровий спосіб життя й технології — те, що ми робимо разом із нашою спільнотою.</p>
+      <div class="posters">
+        <article class="poster p-piano">
+          <div class="keys" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="tag" data-i18n="tConcert">Концерт</span>
+          <div><h3>Grand Rock Piano Show</h3><p data-i18n="pPiano">Концертне шоу.</p></div>
+        </article>
+        <article class="poster p-street">
+          <span class="tag" data-i18n="tMusic">Музичний фестиваль</span>
+          <div><h3>Street Music Fest</h3><p data-i18n="pStreet">Фестиваль, де можна відкрити музикантів, яких завтра знатиме вся країна.</p></div>
+        </article>
+        <article class="poster p-yujin">
+          <span class="tag" data-i18n="tHealth">Здоровий спосіб життя</span>
+          <div><h3>Yujin Fest</h3><p data-i18n="pYujin">Щорічний фестиваль, що популяризує здоровий спосіб життя.</p></div>
+        </article>
+        <article class="poster p-latusho">
+          <span class="tag" data-i18n="tBooks">Книжковий клуб</span>
+          <div><h3>Latusho</h3><p data-i18n="pLatusho">Клуб, що об'єднує любителів книжок різного віку.</p></div>
+        </article>
+        <article class="poster p-skarb">
+          <span class="badge" data-i18n="tSoon">У розробці</span>
+          <div><h3>Skarb NGO</h3><p data-i18n="pSkarb">Платформа, що поєднуватиме громадські організації з ІТ-волонтерами.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block join" id="join" aria-labelledby="join-h">
+    <div class="wrap">
+      <div>
+        <h2 class="h2" id="join-h" data-i18n="joinH">Долучайтеся</h2>
+        <p class="intro" data-i18n="joinIntro">Маєте ідею, час або навички? Напишіть нам, і ми разом знайдемо, як їх застосувати.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="https://www.facebook.com/skarb.ngo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg>
+            <span data-i18n="ctaWrite">Написати нам у Facebook</span>
+          </a>
+        </div>
+      </div>
+      <ul class="ways">
+        <li><h3 data-i18n="w1h">Стати членом організації</h3><p data-i18n="w1p">Членом може стати кожен, кому виповнилося 18 років: громадянин України, іноземець чи особа без громадянства. Участь добровільна.</p></li>
+        <li><h3 data-i18n="w2h">Волонтерити</h3><p data-i18n="w2p">Допомагайте з організацією подій і фестивалів або діліться своїми ІТ-навичками.</p></li>
+        <li><h3 data-i18n="w3h">Стати партнером</h3><p data-i18n="w3p">Запрошуємо бізнес, громадські організації та установи до спільних проєктів.</p></li>
+      </ul>
+    </div>
+  </section>
 </main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <span class="brand">
+        <svg viewBox="0 0 120 70" aria-hidden="true"><path d="M60 4L67.6 23.5L88.5 24.7L72.4 38L77.6 58.3L60 47L42.4 58.3L47.6 38L31.5 24.7L52.4 23.5Z" fill="none" stroke-width="5" stroke-linejoin="round"/><path d="M24 29L29 41.1L42.1 42.1L32.1 50.6L35.2 63.4L24 56.5L12.8 63.4L15.9 50.6L5.9 42.1L19 41.1Z" fill="none" stroke-width="5" stroke-linejoin="round"/><path d="M96 29L101 41.1L114.1 42.1L104.1 50.6L107.2 63.4L96 56.5L84.8 63.4L87.9 50.6L77.9 42.1L91 41.1Z" fill="none" stroke-width="5" stroke-linejoin="round"/></svg>
+        <span data-i18n="footName">Громадська організація «Скарбниця проектів»</span>
+      </span>
+      <p data-i18n="footMeta">Київ, з 2017 року</p>
+    </div>
+    <p><a href="https://www.facebook.com/skarb.ngo" target="_blank" rel="noopener">facebook.com/skarb.ngo</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var en = {
+    skip:"Skip to content", brandAria:"Treasure house of projects", navAria:"Sections",
+    short:"Treasure house", navAbout:"About", navDirs:"What we do", navProjects:"Projects", navJoin:"Get involved",
+    h1a:"Treasure house", h1b:"of projects",
+    lead:"A non-profit from Kyiv. We help ideas grow into projects in culture, education, health and information technology.",
+    ctaProjects:"See our projects", ctaFb:"Find us on Facebook",
+    aboutH:"We back community initiatives that change life around us",
+    aboutP1:"Treasure house of projects is a non-profit public organisation founded in Kyiv in 2017. We coordinate and support progressive initiatives, events and gatherings, helping people find a team, partners and resources so a good idea can become a festival, a club or a service.",
+    aboutP2:"Our goal is to protect the social, creative, educational and tech interests of people of all ages, and to support Ukrainian culture and social responsibility.",
+    fFoundedT:"Founded", fFounded:"2017, Kyiv", fStatusT:"Status", fStatus:"Non-profit public organisation",
+    fGeoT:"Active", fGeo:"Across Ukraine", fNameT:"In Ukrainian", fName:"ГО «Скарбниця проектів»",
+    dirsH:"What we do", dirsIntro:"Six areas set out in our charter. Every project we take on fits at least one of them.",
+    d1h:"Festivals and events", d1p:"Contests, competitions and festivals that promote healthy living and cultural values.",
+    d2h:"Culture and education", d2p:"Growing Ukraine's cultural heritage, publishing books and sharing cultural and educational knowledge.",
+    d3h:"Learning", d3p:"Courses, seminars and schools that help people gain skills and adapt to new circumstances.",
+    d4h:"Health", d4p:"Supporting programmes and research on physical and mental health in Ukraine and abroad.",
+    d5h:"Science and IT", d5p:"Advancing science, education and information technology through educational programmes.",
+    d6h:"Partnerships", d6p:"Working with business, NGOs and public authorities to solve problems people face.",
+    projH:"Projects", projIntro:"Music, books, healthy living and technology: what we build together with our community.",
+    tConcert:"Concert", pPiano:"A concert show.",
+    tMusic:"Music festival", pStreet:"A festival where you can discover the musicians the whole country will know tomorrow.",
+    tHealth:"Healthy living", pYujin:"A yearly festival that promotes a healthy lifestyle.",
+    tBooks:"Book club", pLatusho:"A club that brings together book lovers of every age.",
+    tSoon:"In development", pSkarb:"A platform that will connect non-profits with IT volunteers.",
+    joinH:"Get involved", joinIntro:"Have an idea, some time or skills to share? Write to us and we'll work out together how to put them to use.",
+    ctaWrite:"Message us on Facebook",
+    w1h:"Become a member", w1p:"Anyone aged 18 or over can join: Ukrainian citizens, foreign nationals and stateless persons alike. Membership is voluntary.",
+    w2h:"Volunteer", w2p:"Help us run events and festivals, or contribute your IT skills.",
+    w3h:"Become a partner", w3p:"We welcome businesses, NGOs and institutions to collaborate on joint projects.",
+    footName:"Treasure house of projects (NGO)", footMeta:"Kyiv, since 2017"
+  };
+  var meta = {
+    uk:{title:document.title, desc:document.querySelector('meta[name=description]').content, btn:"EN", btnAria:"Switch to English"},
+    en:{title:"Treasure house of projects — Kyiv non-profit", desc:"Treasure house of projects is a Kyiv non-profit that runs projects in culture, education, health and IT.", btn:"UA", btnAria:"Перемкнути на українську"}
+  };
+  var uk = {};
+  var nodes = document.querySelectorAll('[data-i18n]');
+  var ariaNodes = document.querySelectorAll('[data-i18n-aria]');
+  nodes.forEach(function(n){ uk[n.dataset.i18n] = n.textContent; });
+  ariaNodes.forEach(function(n){ uk[n.dataset.i18nAria] = n.getAttribute('aria-label'); });
+  var btn = document.getElementById('lang');
+
+  function apply(lang){
+    var dict = lang === 'en' ? en : uk;
+    nodes.forEach(function(n){ var v = dict[n.dataset.i18n]; if (v) n.textContent = v; });
+    ariaNodes.forEach(function(n){ var v = dict[n.dataset.i18nAria]; if (v) n.setAttribute('aria-label', v); });
+    document.documentElement.lang = lang === 'en' ? 'en' : 'uk';
+    document.title = meta[lang].title;
+    document.querySelector('meta[name=description]').content = meta[lang].desc;
+    btn.textContent = meta[lang].btn;
+    btn.setAttribute('aria-label', meta[lang].btnAria);
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
+
+  var initial = 'uk';
+  var q = new URLSearchParams(location.search).get('lang');
+  if (q === 'en' || q === 'uk') initial = q;
+  else { try { if (localStorage.getItem('lang') === 'en') initial = 'en'; } catch(e) {} }
+  var current = initial;
+  if (initial === 'en') apply('en');
+  btn.addEventListener('click', function(){ current = current === 'en' ? 'uk' : 'en'; apply(current); });
+})();
+</script>
 </body>
 </html>
