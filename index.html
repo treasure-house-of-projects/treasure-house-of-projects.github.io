@@ -109,20 +109,25 @@
     .vault{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
     .vault .h2{color:var(--paper)}
     .vault .intro{color:#b9d3cc}
-    .posters{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(13rem,auto);gap:1rem;margin-top:3.25rem}
-    .poster{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem;padding:1.6rem;border:1px solid rgba(227,196,107,.35);border-radius:3px;background:rgba(255,255,255,.025)}
+    .posters{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1rem;margin-top:3.25rem}
+    .poster{min-height:13rem;position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem;padding:1.6rem;border:1px solid rgba(227,196,107,.35);border-radius:3px;background:rgba(255,255,255,.025)}
     .poster .tag{font-size:.9rem;color:var(--gold-lit);font-weight:500}
     .poster h3{font:700 clamp(1.4rem,2.3vw,1.9rem)/1.08 var(--display);letter-spacing:-.01em}
     .poster p{color:#c7ddd7;font-size:1rem;max-width:30rem;margin-top:.6rem}
     .p-piano{grid-column:span 4;grid-row:span 2;background:radial-gradient(90% 120% at 100% 100%,rgba(212,175,74,.22),transparent 60%),rgba(255,255,255,.03)}
     .p-piano h3{font-size:clamp(2.2rem,5.4vw,4.4rem);line-height:.98;max-width:9ch}
-    .p-piano .keys{position:absolute;right:1.6rem;top:1.6rem;display:flex;gap:3px;opacity:.9}
-    .p-piano .keys i{width:.6rem;height:2.6rem;border:1px solid var(--gold);border-radius:0 0 2px 2px}
-    .p-piano .keys i:nth-child(2n){background:var(--gold);height:1.7rem}
-    .p-street{grid-column:span 2;grid-row:span 2}
-    .p-street h3{font-size:clamp(1.8rem,3.4vw,2.6rem)}
-    .p-yujin,.p-latusho{grid-column:span 2}
-    .p-skarb{grid-column:span 2;border-style:dashed}
+    .p-piano p{max-width:34rem}
+    .result{border-top:1px solid rgba(227,196,107,.35);padding-top:1rem;display:grid;gap:.35rem}
+    .result strong{font:800 clamp(1.9rem,4vw,3rem)/1 var(--display);color:var(--gold-lit);letter-spacing:-.02em}
+    .result span{color:#c7ddd7;font-size:.95rem;max-width:34rem}
+    .p-yujin{grid-column:span 2;grid-row:span 2}
+    .p-yujin h3{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+    .p-street,.p-aid,.p-latusho{grid-column:span 2}
+    .p-skarb{grid-column:span 6;border-style:dashed;flex-direction:row;align-items:center;justify-content:flex-start;gap:1.5rem 2.5rem;min-height:0}
+    .p-skarb p{margin-top:.3rem}
+    .p-skarb .badge{align-self:center}
+    .partners{margin-top:2rem;color:#b9d3cc;font-size:.95rem;max-width:52rem}
+    .partners span:first-child{color:var(--gold-lit);font-weight:600;margin-right:.35rem}
     .badge{align-self:flex-start;font-size:.85rem;font-weight:600;color:var(--ink);background:var(--gold-lit);border-radius:999px;padding:.3rem .7rem}
 
     /* join */
@@ -146,9 +151,9 @@
       .about .wrap,.join .wrap{grid-template-columns:1fr}
       .dir-list{grid-template-columns:repeat(2,minmax(0,1fr))}
       .posters{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .p-piano{grid-column:span 2;grid-row:auto;min-height:20rem}
-      .p-street{grid-column:span 2;grid-row:auto}
-      .p-yujin,.p-latusho,.p-skarb{grid-column:span 1}
+      .p-piano,.p-yujin{grid-column:span 2;grid-row:auto}
+      .p-street,.p-aid,.p-latusho{grid-column:span 1}
+      .p-skarb{grid-column:span 2}
     }
     @media (max-width:720px){
       .nav{display:none}
@@ -158,8 +163,9 @@
       .hero{padding:7rem 0 4.5rem}
       .dir-list{grid-template-columns:1fr;gap:2rem}
       .posters{grid-template-columns:1fr}
-      .p-piano,.p-street,.p-yujin,.p-latusho,.p-skarb{grid-column:auto}
-      .p-piano{min-height:17rem}
+      .p-piano,.p-yujin,.p-street,.p-aid,.p-latusho,.p-skarb{grid-column:auto}
+      .p-skarb{flex-direction:column;align-items:flex-start}
+      .p-skarb .badge{align-self:flex-start}
       .facts div{grid-template-columns:1fr;gap:.15rem}
       .btn{width:100%;justify-content:center}
     }
@@ -212,7 +218,7 @@
     <div class="wrap">
       <h2 class="h2" id="about-h" data-i18n="aboutH">Підтримуємо громадські ініціативи, що змінюють життя довкола</h2>
       <div class="about-text">
-        <p data-i18n="aboutP1">«Скарбниця проектів» — неприбуткова громадська організація, створена 2017 року в Києві. Ми координуємо й підтримуємо прогресивні ініціативи, заходи та події: допомагаємо знайти команду, партнерів і ресурси, щоб корисна ідея стала фестивалем, клубом чи сервісом.</p>
+        <p data-i18n="aboutP1">«Скарбниця проектів» — неприбуткова громадська організація, створена 2017 року в Києві. Ми координуємо й підтримуємо прогресивні ініціативи, заходи та події: допомагаємо знайти команду, партнерів і ресурси, щоб корисна ідея стала фестивалем, концертом чи сервісом. Ми провели благодійний концерт, що зібрав понад 274 тисячі гривень допомоги для дітей, і фестиваль про здоров'я в київському Гідропарку, а сьогодні відправляємо гуманітарну допомогу.</p>
         <p data-i18n="aboutP2">Наша мета — захищати соціальні, творчі, освітні й інформаційно-технологічні інтереси людей різного віку, сприяти розвитку української культури та соціальної відповідальності.</p>
         <dl class="facts">
           <div><dt data-i18n="fFoundedT">Заснована</dt><dd data-i18n="fFounded">2017 рік, Київ</dd></div>
@@ -248,20 +254,37 @@
   <section class="block vault" id="projects" aria-labelledby="proj-h">
     <div class="wrap">
       <h2 class="h2" id="proj-h" data-i18n="projH">Проєкти</h2>
-      <p class="intro" data-i18n="projIntro">Музика, книжки, здоровий спосіб життя й технології — те, що ми робимо разом із нашою спільнотою.</p>
+      <p class="intro" data-i18n="projIntro">Благодійні концерти, фестивалі, книжки, гуманітарна допомога й технології — те, що ми робимо разом зі спільнотою та партнерами.</p>
       <div class="posters">
         <article class="poster p-piano">
-          <div class="keys" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <span class="tag" data-i18n="tConcert">Концерт</span>
-          <div><h3>Grand Rock Piano Show</h3><p data-i18n="pPiano">Концертне шоу.</p></div>
-        </article>
-        <article class="poster p-street">
-          <span class="tag" data-i18n="tMusic">Музичний фестиваль</span>
-          <div><h3>Street Music Fest</h3><p data-i18n="pStreet">Фестиваль, де можна відкрити музикантів, яких завтра знатиме вся країна.</p></div>
+          <span class="tag" data-i18n="tConcert">Благодійний концерт, 2019</span>
+          <div>
+            <h3>Grand Rock Piano Show</h3>
+            <p data-i18n="pPiano">Рок-шоу з роялем у головній ролі: композитор і піаніст Ярослав Олійник, симфонічний оркестр, рок-бенд, хор і балет. 12 квітня 2019 року, ЦКМ КПІ.</p>
+          </div>
+          <div class="result">
+            <strong data-i18n="pPianoSum">274 892 грн</strong>
+            <span data-i18n="pPianoRes">благодійної допомоги: квитки для фондів «Таблеточки» та «Подушка добра», внесок у фонд «Таблеточки» й реабілітаційне обладнання для будинку дитини «Сонечко» в Запоріжжі.</span>
+          </div>
         </article>
         <article class="poster p-yujin">
-          <span class="tag" data-i18n="tHealth">Здоровий спосіб життя</span>
-          <div><h3>Yujin Fest</h3><p data-i18n="pYujin">Щорічний фестиваль, що популяризує здоровий спосіб життя.</p></div>
+          <span class="tag" data-i18n="tHealth">Фестиваль здорового способу життя, 2016–2017</span>
+          <div>
+            <h3 data-i18n="yujinName">Юджин Fest</h3>
+            <p data-i18n="pYujin">Благодійний фестиваль пам'яті Євгенії Квітницької про здоровий спосіб життя та профілактику діабету. У 2017 році — 10 годин у київському Гідропарку: лекторій, безкоштовна перевірка рівня цукру, майстер-класи, літературна сцена, дитячий майданчик і музична сцена з п'ятьма гуртами.</p>
+          </div>
+          <div class="result">
+            <strong>250+</strong>
+            <span data-i18n="pYujinRes">відвідувачів отримали консультацію щодо діабету.</span>
+          </div>
+        </article>
+        <article class="poster p-street">
+          <span class="tag" data-i18n="tMusic">Фестиваль вуличних музикантів</span>
+          <div><h3>Street Music Fest</h3><p data-i18n="pStreet">Відкриває музикантів, яких завтра знатиме вся країна. Команда фестивалю зібрала музичну сцену Юджин Fest.</p></div>
+        </article>
+        <article class="poster p-aid">
+          <span class="tag" data-i18n="tAid">Волонтерство</span>
+          <div><h3 data-i18n="aidName">Гуманітарна допомога</h3><p data-i18n="pAid">Відправляємо допомогу туди, де її чекають, разом із «Гуманітарною Новою поштою».</p></div>
         </article>
         <article class="poster p-latusho">
           <span class="tag" data-i18n="tBooks">Книжковий клуб</span>
@@ -272,6 +295,7 @@
           <div><h3>Skarb NGO</h3><p data-i18n="pSkarb">Платформа, що поєднуватиме громадські організації з ІТ-волонтерами.</p></div>
         </article>
       </div>
+      <p class="partners"><span data-i18n="partnersT">Працювали разом із</span> <span data-i18n="partners">БФ «Таблеточки», БФ «Подушка добра», Diabet.ua, Київська філія Української спілки психотерапевтів, «Гуманітарна Нова пошта».</span></p>
     </div>
   </section>
 
@@ -318,7 +342,7 @@
     lead:"A non-profit from Kyiv. We help ideas grow into projects in culture, education, health and information technology.",
     ctaProjects:"See our projects", ctaFb:"Find us on Facebook",
     aboutH:"We back community initiatives that change life around us",
-    aboutP1:"Treasure house of projects is a non-profit public organisation founded in Kyiv in 2017. We coordinate and support progressive initiatives, events and gatherings, helping people find a team, partners and resources so a good idea can become a festival, a club or a service.",
+    aboutP1:"Treasure house of projects is a non-profit public organisation founded in Kyiv in 2017. We coordinate and support progressive initiatives, events and gatherings, helping people find a team, partners and resources so a good idea can become a festival, a concert or a service. We have run a charity concert that raised over 274,000 UAH for children and a health festival in Kyiv's Hydropark, and today we send humanitarian aid.",
     aboutP2:"Our goal is to protect the social, creative, educational and tech interests of people of all ages, and to support Ukrainian culture and social responsibility.",
     fFoundedT:"Founded", fFounded:"2017, Kyiv", fStatusT:"Status", fStatus:"Non-profit public organisation",
     fGeoT:"Active", fGeo:"Across Ukraine", fNameT:"In Ukrainian", fName:"ГО «Скарбниця проектів»",
@@ -329,10 +353,17 @@
     d4h:"Health", d4p:"Supporting programmes and research on physical and mental health in Ukraine and abroad.",
     d5h:"Science and IT", d5p:"Advancing science, education and information technology through educational programmes.",
     d6h:"Partnerships", d6p:"Working with business, NGOs and public authorities to solve problems people face.",
-    projH:"Projects", projIntro:"Music, books, healthy living and technology: what we build together with our community.",
-    tConcert:"Concert", pPiano:"A concert show.",
-    tMusic:"Music festival", pStreet:"A festival where you can discover the musicians the whole country will know tomorrow.",
-    tHealth:"Healthy living", pYujin:"A yearly festival that promotes a healthy lifestyle.",
+    projH:"Projects", projIntro:"Charity concerts, festivals, books, humanitarian aid and technology: what we do together with our community and partners.",
+    tConcert:"Charity concert, 2019",
+    pPiano:"A rock show with the grand piano in the lead: composer and pianist Yaroslav Oliinyk with a symphony orchestra, rock band, choir and ballet. 12 April 2019, KPI Cultural Centre, Kyiv.",
+    pPianoSum:"274,892 UAH",
+    pPianoRes:"in charitable aid: tickets for the Tabletochky and Podushka Dobra foundations, a donation to Tabletochky and rehabilitation equipment for the Sonechko children's home in Zaporizhzhia.",
+    tHealth:"Healthy living festival, 2016–2017", yujinName:"Yujin Fest",
+    pYujin:"A charity festival in memory of Yevheniia Kvitnytska about healthy living and diabetes prevention. In 2017 it ran for 10 hours in Kyiv's Hydropark: talks, free blood sugar checks, workshops, a literary stage, a kids' area and a music stage with five bands.",
+    pYujinRes:"visitors received diabetes consultations.",
+    tMusic:"Street musicians festival", pStreet:"Discovering the musicians the whole country will know tomorrow. The festival team put together the Yujin Fest music stage.",
+    tAid:"Volunteering", aidName:"Humanitarian aid", pAid:"We send aid where it's needed, together with Humanitarian Nova Poshta.",
+    partnersT:"We've worked with", partners:"Tabletochky and Podushka Dobra charity foundations, Diabet.ua, the Kyiv branch of the Ukrainian Union of Psychotherapists, Humanitarian Nova Poshta.",
     tBooks:"Book club", pLatusho:"A club that brings together book lovers of every age.",
     tSoon:"In development", pSkarb:"A platform that will connect non-profits with IT volunteers.",
     joinH:"Get involved", joinIntro:"Have an idea, some time or skills to share? Write to us and we'll work out together how to put them to use.",
